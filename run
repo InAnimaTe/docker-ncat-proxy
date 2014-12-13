@@ -1,0 +1,8 @@
+#!/bin/bash
+DEST_HOST="example.com"
+DEST_PORT="443"
+LOCAL_PORT="443"
+
+## Note that I removed the "-m 20" option which allows you to limit the max simultaneous connections. See http://linux.die.net/man/1/ncat
+
+ncat -l -p $LOCAL_PORT -k --sh-exec "ncat $DEST_HOST $DEST_PORT"
