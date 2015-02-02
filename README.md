@@ -5,12 +5,12 @@ HAProxy or NGINX should be used for more performance demanding public applicatio
 
 
 1. Clone the repo
-2. Set appropriate variables in ./run
-3. Build the image
-4. ????
-5. Profit
+2. Build the image
+3. ????
+4. Profit
 
-> Note that you need to properly have docker or yourself modify the nat iptables rules and do similar to a `docker run -d -p 443:443 ncat-proxy` to ensure this listens properly.
+
+To properly run this, do someething like `docker run -d -p 1234:1234 -e DEST_HOST="example.com" -e DEST_PORT=443 -e LOCAL_PORT=1234 --name ncat-proxy inanimate/ncat-proxy`
 
 ##### Extra notes
 
