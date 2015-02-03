@@ -3,7 +3,8 @@
 : ${DEST_HOST:=example.com}
 : ${DEST_PORT:=443}
 : ${LOCAL_PORT:=443}
+: ${MAX_CONN:=100}
 
-## Note that I removed the "-m 20" option which allows you to limit the max simultaneous connections. See http://linux.die.net/man/1/ncat
+## See http://linux.die.net/man/1/ncat for more on what these mean.
 
-ncat -l -p $LOCAL_PORT -k --sh-exec "ncat $DEST_HOST $DEST_PORT"
+ncat -l -p $LOCAL_PORT -k -m $MAX_CONN --sh-exec "ncat $DEST_HOST $DEST_PORT"
