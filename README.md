@@ -10,7 +10,7 @@ HAProxy or NGINX should be used for more performance demanding public applicatio
 4. Profit
 
 
-To properly run this, do someething like `docker run -d -p 1234:1234 -e DEST_HOST="example.com" -e DEST_PORT=443 -e LOCAL_PORT=1234 --name ncat-proxy inanimate/ncat-proxy`
+To properly run this, do someething like `docker run -d -p 1234:1234 -e DEST_HOST="example.com" -e DEST_PORT=443 -e LOCAL_PORT=1234 -e MAX_CONN=4028 --name ncat-proxy inanimate/ncat-proxy`
 
 ##### Extra notes
 
